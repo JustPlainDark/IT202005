@@ -10,3 +10,6 @@ else{
   echo "You're not logged in";
 }
 ?>
+<?php
+require(__DIR__ . "/../../partials/flash.php");
+?>
