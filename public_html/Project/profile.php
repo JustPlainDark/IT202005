@@ -85,32 +85,34 @@ if (isset($_POST["save"])) {
 $email = get_user_email();
 $username = get_username();
 ?>
-<form method="POST" onsubmit="return validate(this);">
-    <div class="mb-3">
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" value="<?php se($email); ?>" />
-    </div>
-    <div class="mb-3">
-        <label for="username">Username</label>
-        <input type="text" name="username" id="username" value="<?php se($username); ?>" />
-    </div>
-    <!-- DO NOT PRELOAD PASSWORD -->
-    <div>Password Reset</div>
-    <div class="mb-3">
-        <label for="cp">Current Password</label>
-        <input type="password" name="currentPassword" id="cp" />
-    </div>
-    <div class="mb-3">
-        <label for="np">New Password</label>
-        <input type="password" name="newPassword" id="np" />
-    </div>
-    <div class="mb-3">
-        <label for="conp">Confirm Password</label>
-        <input type="password" name="confirmPassword" id="conp" />
-    </div>
-    <input type="submit" value="Update Profile" name="save" />
-</form>
-
+<div class="container-fluid">
+    <h1>Profile</h1>
+    <form method="POST" onsubmit="return validate(this);">
+        <div class="mb-3">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-control" type="email" name="email" id="email" value="<?php se($email); ?>" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="username">Username</label>
+            <input class="form-control" type="text" name="username" id="username" value="<?php se($username); ?>" />
+        </div>
+        <!-- DO NOT PRELOAD PASSWORD -->
+        <div class="mb-3">Password Reset</div>
+        <div class="mb-3">
+            <label class="form-label" for="cp">Current Password</label>
+            <input class="form-control" type="password" name="currentPassword" id="cp" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="np">New Password</label>
+            <input class="form-control" type="password" name="newPassword" id="np" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="conp">Confirm Password</label>
+            <input class="form-control" type="password" name="confirmPassword" id="conp" />
+        </div>
+        <input type="submit" class="mt-3 btn btn-primary" value="Update Profile" name="save" />
+    </form>
+</div>
 <script>
     function validate(form) {
         let pw = form.newPassword.value;
@@ -122,7 +124,7 @@ $username = get_username();
         //find the flash container, create a new element, appendChild
         if (pw !== con) {
             //find the container
-            let flash = document.getElementById("flash");
+            /*let flash = document.getElementById("flash");
             //create a div (or whatever wrapper we want)
             let outerDiv = document.createElement("div");
             outerDiv.className = "row justify-content-center";
@@ -133,7 +135,7 @@ $username = get_username();
             innerDiv.innerText = "Password and Confirm password must match";
             outerDiv.appendChild(innerDiv);
             //add the element to the DOM (if we don't it merely exists in memory)
-            flash.appendChild(outerDiv);
+            flash.appendChild(outerDiv);*/
             flash("Password and Confirm password must match", "warning");
             isValid = false;
         }
