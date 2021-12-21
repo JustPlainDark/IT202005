@@ -1,8 +1,8 @@
 # Project Name: Simple Arcade
 ## Project Summary: This project will create a simple Arcade with scoreboards and competitions based on the implemented game.
-## Github Link: (Prod Branch of Project Folder)
-## Project Board Link: 
-## Website Link: (Heroku Prod of Project folder)
+## Github Link: https://github.com/JustPlainDark/IT202005/blob/prod/proposal.md
+## Project Board Link: https://github.com/JustPlainDark/IT202005/projects/1
+## Website Link: https://dg533-prod.herokuapp.com/Project/home.php
 ## Your Name: David Garcia
 
 <!--
@@ -46,61 +46,62 @@
     - [] The only fields that may be cleared are the password fields
     - https://github.com/JustPlainDark/IT202005/pull/14
     - This one doesn't work as entering credentials will still clear all the fields. I wasn't sure how to get it working and wanted to focus on other features.
-- [x] User will be able to login to their account (given they enter the correct credentials)
+- [x] 11/18/2021 User will be able to login to their account (given they enter the correct credentials)
   - Direct Link: https://dg533-prod.herokuapp.com/Project/login.php
   - https://github.com/JustPlainDark/IT202005/pull/43
   - Form
-    - [x] User can login with email or username
+    - [x] 11/18/2021 User can login with email or username
       - This can be done as a single field or as two separate fields
       - https://github.com/JustPlainDark/IT202005/pull/43
     - [x] 11/3/2021 Password is required
     - https://github.com/JustPlainDark/IT202005/pull/11
-  - [x] User should see friendly error messages when an account either doesn't exist or if passwords don't match
+  - [x] 11/7/2021 User should see friendly error messages when an account either doesn't exist or if passwords don't match
     - https://github.com/JustPlainDark/IT202005/pull/13
-  - [x] Logging in should fetch the user's detail (and roles) and save them into the session.
+  - [x] 11/11/2021 Logging in should fetch the user's detail (and roles) and save them into the session.
     - https://github.com/JustPlainDark/IT202005/pull/40
-  - User will be directed to a landing page upon login
-    - [x] This is a protected page (non-logged in users shouldn't have access)
+  - [x] 11/3/2021 User will be directed to a landing page upon login
+    - [x] 11/3/2021 This is a protected page (non-logged in users shouldn't have access)
       - https://github.com/JustPlainDark/IT202005/pull/11
     - This can be home, profile, a dashboard, etc
-- [x] Users will be able to logout
-  - [x] Logging out will redirect to login page
+- [x] 11/7/2021 Users will be able to logout
+  - [x] 11/3/2021 Logging out will redirect to login page
     - https://github.com/JustPlainDark/IT202005/pull/11
-  - [] User should see a message that they’ve successfully logged out
+  - [] 11/7/2021 User should see a message that they’ve successfully logged out
     - https://github.com/JustPlainDark/IT202005/pull/13
     - Logout message occurs on logout page and doesn't appear on login redirect
-  - [x] Session should be destroyed (so the back button doesn’t allow them access back in)
+  - [x] 11/3/2021 Session should be destroyed (so the back button doesn’t allow them access back in)
     - https://github.com/JustPlainDark/IT202005/pull/11
 - [x] Basic Security rules implemented
   - Authentication:
-    - [x] Function to check if user is logged in
+    - [x] 11/3/2021 Function to check if user is logged in
       - https://github.com/JustPlainDark/IT202005/pull/11
-    - [x] Function should be called on appropriate pages that only allow logged in users
+    - [x] 11/8/2021 Function should be called on appropriate pages that only allow logged in users
       - https://github.com/JustPlainDark/IT202005/pull/14
   - Roles/Authorization:
     - Have a roles table (see below)
-- [x] Basic Roles Implemented
-  - [x] Have a Roles table	(id, name, description, is_active, modified, created)
+- [x] 11/11/2021 Basic Roles Implemented
+  - [x] 11/11/2021 Have a Roles table	(id, name, description, is_active, modified, created)
     - https://github.com/JustPlainDark/IT202005/pull/40
-  - [x] Have a User Roles table (id, user_id, role_id, is_active, created, modified)
+  - [x] 11/11/2021 Have a User Roles table (id, user_id, role_id, is_active, created, modified)
     - https://github.com/JustPlainDark/IT202005/pull/40
-  - [x] Include a function to check if a user has a specific role (we won’t use it for this milestone but it should be usable in the future)
+  - [x] 11/11/2021 Include a function to check if a user has a specific role (we won’t use it for this milestone but it should be usable in the future)
     - https://github.com/JustPlainDark/IT202005/pull/40
 - [x] 12/21/2021 Site should have basic styles/theme applied; everything should be styled
   - I.e. forms/input, navigation bar, etc
   - https://github.com/JustPlainDark/IT202005/pull/48
-- [x] Any output messages/errors should be “user friendly”
+- [x] 11/7/2021 Any output messages/errors should be “user friendly”
   - Any technical errors or debug output displayed will result in a loss of points
   - https://github.com/JustPlainDark/IT202005/pull/13
-- [x] User will be able to see their profile
+- [x] 11/8/2021 User will be able to see their profile
   - Email, username, etc
   - https://github.com/JustPlainDark/IT202005/pull/14
-- [x] User will be able to edit their profile
-  - [x] Changing username/email should properly check to see if it’s available before allowing the change
+- [x] 11/8/2021 User will be able to edit their profile
+  - Direct Link: https://dg533-prod.herokuapp.com/Project/profile.php
+  - [x] 11/8/2021 Changing username/email should properly check to see if it’s available before allowing the change
     - https://github.com/JustPlainDark/IT202005/pull/14
-  - [x] Any other fields should be properly validated
+  - [x] 11/8/2021 Any other fields should be properly validated
     - https://github.com/JustPlainDark/IT202005/pull/14
-  - [x] Allow password reset (only if the existing correct password is provided)
+  - [x] 11/8/2021 Allow password reset (only if the existing correct password is provided)
    - Hint: logic for the password check would be similar to login
    - https://github.com/JustPlainDark/IT202005/pull/14
 - Milestone 2
