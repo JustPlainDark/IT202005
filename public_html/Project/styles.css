@@ -27,6 +27,9 @@ nav li a{
 nav li a:hover{
     background-color: goldenrod;
 }
+li{
+    list-style: none;
+}
 input{
     border-radius: 20%;
 }
