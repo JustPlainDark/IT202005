@@ -23,54 +23,86 @@
 ### Proposal Checklist and Evidence
 
 - Milestone 1
-- [ ] \(mm/dd/yyyy of completion) Users will be able to register a new account  
+- [x] 11/7/2021 Users will be able to register a new account  
+  - https://github.com/JustPlainDark/IT202005/pull/11
+  - Direct Link: https://dg533-prod.herokuapp.com/Project/register.php
   - Form Fields
-    - [ ] Username, email, password, confirm password(other fields optional)
-    - [ ] Email is required and must be validated
-    - [ ] Username is required
-    - [ ] Confirm passwords match
+    - [x] 11/7/2021 Username, email, password, confirm password(other fields optional)
+    - [x] 11/7/2021 Email is required and must be validated
+    - [x] 11/7/2021 Username is required
+    - [x] 11/7/2021 Confirm passwords match
   - Users Table
-    - [ ] Id, username, email, password (60 characters), created, modified
-  - Password must be hashed (plain text passwords will lose points)
-  - Email should be unique
-  - Username should be unique
-  - System should let user know if username or email is taken and allow the user to correct the error without wiping/clearing the form
-    - [ ] The only fields that may be cleared are the password fields
-- [ ] User will be able to login to their account (given they enter the correct credentials)
+    - [x] 10/7/2021 Id, username, email, password (60 characters), created, modified
+      - https://github.com/JustPlainDark/IT202005/pull/7
+  - [x] 11/1/21 Password must be hashed (plain text passwords will lose points)
+    - https://github.com/JustPlainDark/IT202005/pull/11
+  - [x] 10/7/21 Email should be unique
+    - https://github.com/JustPlainDark/IT202005/pull/7
+  -  [x] 11/8/21 Username should be unique
+    - https://github.com/JustPlainDark/IT202005/pull/14
+  - [] System should let user know if username or email is taken and allow the user to correct the error without wiping/clearing the form
+    - https://github.com/JustPlainDark/IT202005/pull/14
+    - The system does alert if an email or username is already taken but it wipes the form. 
+    - [] The only fields that may be cleared are the password fields
+    - https://github.com/JustPlainDark/IT202005/pull/14
+    - This one doesn't work as entering credentials will still clear all the fields. I wasn't sure how to get it working and wanted to focus on other features.
+- [x] User will be able to login to their account (given they enter the correct credentials)
+  - Direct Link: https://dg533-prod.herokuapp.com/Project/login.php
+  - https://github.com/JustPlainDark/IT202005/pull/43
   - Form
-    - [ ] User can login with email or username
+    - [x] User can login with email or username
       - This can be done as a single field or as two separate fields
-    - [ ] Password is required
-  - User should see friendly error messages when an account either doesn't exist or if passwords don't match
-  - Logging in should fetch the user's detail (and roles) and save them into the session.
+      - https://github.com/JustPlainDark/IT202005/pull/43
+    - [x] 11/3/2021 Password is required
+    - https://github.com/JustPlainDark/IT202005/pull/11
+  - [x] User should see friendly error messages when an account either doesn't exist or if passwords don't match
+    - https://github.com/JustPlainDark/IT202005/pull/13
+  - [x] Logging in should fetch the user's detail (and roles) and save them into the session.
+    - https://github.com/JustPlainDark/IT202005/pull/40
   - User will be directed to a landing page upon login
-    - [ ] This is a protected page (non-logged in users shouldn't have access)
-    - [ ] This can be home, profile, a dashboard, etc
-- [ ] Users will be able to logout
-  - Logging out will redirect to login page
-  - User should see a message that they’ve successfully logged out
-  - Session should be destroyed (so the back button doesn’t allow them access back in)
-- [ ] Basic Security rules implemented
+    - [x] This is a protected page (non-logged in users shouldn't have access)
+      - https://github.com/JustPlainDark/IT202005/pull/11
+    - This can be home, profile, a dashboard, etc
+- [x] Users will be able to logout
+  - [x] Logging out will redirect to login page
+    - https://github.com/JustPlainDark/IT202005/pull/11
+  - [] User should see a message that they’ve successfully logged out
+    - https://github.com/JustPlainDark/IT202005/pull/13
+    - Logout message occurs on logout page and doesn't appear on login redirect
+  - [x] Session should be destroyed (so the back button doesn’t allow them access back in)
+    - https://github.com/JustPlainDark/IT202005/pull/11
+- [x] Basic Security rules implemented
   - Authentication:
-    - [ ] Function to check if user is logged in
-    - [ ] Function should be called on appropriate pages that only allow logged in users
+    - [x] Function to check if user is logged in
+      - https://github.com/JustPlainDark/IT202005/pull/11
+    - [x] Function should be called on appropriate pages that only allow logged in users
+      - https://github.com/JustPlainDark/IT202005/pull/14
   - Roles/Authorization:
-    - [ ] Have a roles table (see below)
-- [ ] Basic Roles Implemented
-  - Have a Roles table	(id, name, description, is_active, modified, created)
-  - Have a User Roles table (id, user_id, role_id, is_active, created, modified)
-  - Include a function to check if a user has a specific role (we won’t use it for this milestone but it should be usable in the future)
-- [ ] Site should have basic styles/theme applied; everything should be styled
+    - Have a roles table (see below)
+- [x] Basic Roles Implemented
+  - [x] Have a Roles table	(id, name, description, is_active, modified, created)
+    - https://github.com/JustPlainDark/IT202005/pull/40
+  - [x] Have a User Roles table (id, user_id, role_id, is_active, created, modified)
+    - https://github.com/JustPlainDark/IT202005/pull/40
+  - [x] Include a function to check if a user has a specific role (we won’t use it for this milestone but it should be usable in the future)
+    - https://github.com/JustPlainDark/IT202005/pull/40
+- [x] 12/21/2021 Site should have basic styles/theme applied; everything should be styled
   - I.e. forms/input, navigation bar, etc
-- [ ] Any output messages/errors should be “user friendly”
+  - https://github.com/JustPlainDark/IT202005/pull/48
+- [x] Any output messages/errors should be “user friendly”
   - Any technical errors or debug output displayed will result in a loss of points
-- [ ] User will be able to see their profile
+  - https://github.com/JustPlainDark/IT202005/pull/13
+- [x] User will be able to see their profile
   - Email, username, etc
-- [ ] User will be able to edit their profile
-  - Changing username/email should properly check to see if it’s available before allowing the change
-  - Any other fields should be properly validated
-  - Allow password reset (only if the existing correct password is provided)
+  - https://github.com/JustPlainDark/IT202005/pull/14
+- [x] User will be able to edit their profile
+  - [x] Changing username/email should properly check to see if it’s available before allowing the change
+    - https://github.com/JustPlainDark/IT202005/pull/14
+  - [x] Any other fields should be properly validated
+    - https://github.com/JustPlainDark/IT202005/pull/14
+  - [x] Allow password reset (only if the existing correct password is provided)
    - Hint: logic for the password check would be similar to login
+   - https://github.com/JustPlainDark/IT202005/pull/14
 - Milestone 2
 - Milestone 3
 - Milestone 4
