@@ -1,5 +1,4 @@
 <?php
-require(__DIR__ . "/../lib/functions.php");
 //requires a duration to be set
 if (!isset($duration)) {
     $duration = "day"; //choosing to default to day
