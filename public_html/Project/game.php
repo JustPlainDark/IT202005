@@ -49,7 +49,8 @@ require(__DIR__ . "/../../partials/nav.php");
     // An array for enemies (in case there are more than one)
     var enemies = [];
 
-
+    //Session data
+    var session_data = [];
 
     // Add an enemy object to the array
     var enemyBaseSpeed = 2;
@@ -116,22 +117,70 @@ require(__DIR__ . "/../../partials/nav.php");
 
     // Show the end game screen
     function endGame() {
+        session_data.push(Date.now());
+        <?php
+         //used to prevent duplicate game session data
+        $_SESSION["nonce"] = get_random_str(6);
+        ?>
+        let data = {
+            score: score,
+            nonce: "<?php echo $_SESSION["nonce"]; ?>", //the php will echo the value so the JS will have it as if we hard coded it
+            data: session_data
+        }
+        sessionData = []; //reset
+        let http = new XMLHttpRequest();
+        http.onreadystatechange = () => {
+            if (http.readyState == 4) {
+                if (http.status === 200) {
+                    let data = JSON.parse(http.responseText);
+                    console.log("received data", data);
+                    console.log("Saved score");
+                }
+                window.location.reload(); //lazily reloading the page to get a new nonce for next game
+            }
+        }
+        http.open("POST", "api/save_score.php", true);
+        //Convert a simple object to query params
+        {
+            //examples to convert data to query string parameters (used for XMLHttpRequest send)
+            //https://howchoo.com/javascript/how-to-turn-an-object-into-query-string-parameters-in-javascript
+            let query = null;
+            //ES6
+            query = Object.keys(data).map(key => key + '=' + data[key]).join('&');
+            console.log("query1", query);
+            //ES5
+            query = Object.keys(data).map(function(key) {
+                return key + '=' + data[key]
+            }).join('&');
+            console.log("query2", query);
+            //jQuery
+            if ($) {
+                query = $.param(data);
+                console.log("query3", query);
+            }
+            //Note: I don't need the above query param stuff since my data is too complex for a form submit
+            //so I need to use JSON instead
+        }
+        http.setRequestHeader('Content-Type', 'application/json');
+        http.send(JSON.stringify({
+            "data": data
+        }));
         // Stop the spawn interval
-    clearInterval(timeoutId);
-    // Show the final score
-    erase();
-    context.fillStyle = '#000000';
-    context.font = '24px Arial';
-    context.textAlign = 'center';
-    context.fillText('Game Over. Final Score: ' + score, canvas.width / 2, canvas.height / 2);
-    context.font = '18px Arial';
-    context.fillText('Click to restart', canvas.width / 2, canvas.height / 4);
-    gameOver = false;
-    score = 0;
-    enemies = [];
-    ship.x = 50;
-    ship.y = canvas.height / 2 - 25;
-    canvas.addEventListener('click', startGame);
+        clearInterval(timeoutId);
+        // Show the final score
+        erase();
+        context.fillStyle = '#000000';
+        context.font = '24px Arial';
+        context.textAlign = 'center';
+        context.fillText('Game Over. Final Score: ' + score, canvas.width / 2, canvas.height / 2);
+        context.font = '18px Arial';
+        context.fillText('Click to restart', canvas.width / 2, canvas.height / 4);
+        gameOver = false;
+        score = 0;
+        enemies = [];
+        ship.x = 50;
+        ship.y = canvas.height / 2 - 25;
+        canvas.addEventListener('click', startGame);
     }
 
     // Listen for keydown events
