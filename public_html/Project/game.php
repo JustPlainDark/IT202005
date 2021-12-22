@@ -153,13 +153,6 @@ require(__DIR__ . "/../../partials/nav.php");
                 return key + '=' + data[key]
             }).join('&');
             console.log("query2", query);
-            //jQuery
-            if ($) {
-                query = $.param(data);
-                console.log("query3", query);
-            }
-            //Note: I don't need the above query param stuff since my data is too complex for a form submit
-            //so I need to use JSON instead
         }
         http.setRequestHeader('Content-Type', 'application/json');
         http.send(JSON.stringify({
