@@ -3,6 +3,7 @@
 ## Github Link: https://github.com/JustPlainDark/IT202005/blob/prod/proposal.md
 ## Project Board Link: https://github.com/JustPlainDark/IT202005/projects/1
 ## Website Link: https://dg533-prod.herokuapp.com/Project/home.php
+## Final Demo: https://youtu.be/83YQAX3k464
 ## Your Name: David Garcia
 
 <!--
@@ -105,6 +106,33 @@
    - Hint: logic for the password check would be similar to login
    - https://github.com/JustPlainDark/IT202005/pull/14
 - Milestone 2
+  - [x] 12/21/2021 Pick a simple game to implement, anything that generates a score that’s more advanced than a simple random number generator (may build off of a sample from the site shared in class)
+    - https://github.com/JustPlainDark/IT202005/pull/64
+    - Direct Link: https://dg533-prod.herokuapp.com/Project/game.php
+    - What game will you be doing?
+      - Basic Shooter Modification
+    - Briefly describe it.
+      - The game is a simple modification of the shooter example. It includes a powerup that increase the size and speed of the bullet. The player also has full range of movement instead of only up and down movement.
+    - Note: For this milestone the game doesn’t need to be complete, just have something basic or a placeholder that can generate a score when played.
+  - [x] 12/21/2021 The system will save the user’s score at the end of the game if the user is logged in
+    - https://github.com/JustPlainDark/IT202005/pull/80
+    - [x] 12/21/2021 There should be a scores table (id, user_id, score, created)
+      -https://github.com/JustPlainDark/IT202005/pull/68
+    - [x] 12/21/2021 Each received score is a new entry (scores will not be updated)
+      - https://github.com/JustPlainDark/IT202005/pull/80
+  - [x] 12/21/2021 The user will be able to see their last 10 scores
+    - Direct Link: https://dg533-prod.herokuapp.com/Project/home.php
+    - [x] 12/21/2021 Show on their profile page
+      - https://github.com/JustPlainDark/IT202005/pull/68
+    - [x] 12/21/2021 Ordered by most recent
+      - https://github.com/JustPlainDark/IT202005/pull/68
+  - [x] 12/21/2021 Create functions that output the following scoreboards (this will be used later)
+    - https://github.com/JustPlainDark/IT202005/pull/68 
+    - [x] 12/21/2021 Top 10 Weekly
+    - [x] 12/21/2021 Top 10 Monthly
+    - [x] 12/21/2021 Top 10 Lifetime
+    - [x] 12/21/2021 Scoreboards should show no more than 10 results; if there are no results a proper message should be displayed (i.e., “No [time period] scores to display”)
+
 - Milestone 3
 - Milestone 4
 ### Intructions
