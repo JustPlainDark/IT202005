@@ -32,13 +32,12 @@ if (isset($data["score"]) && isset($data["data"]) && isset($data["nonce"])) {
     }
     if (!$reject) {
         $score = (int)se($data, "score", 0, false);
-        $calced = 0;
         $data = $data["data"]; //anti-cheating
         $lastDate = null;
         $data_count = count($data);
         $duplicate_dates = 0;
         foreach ($data as $r) {
-            $date = DateTime::createFromFormat("U", $r["ts"]);
+            $date = DateTime::createFromFormat("U", $r);
             if (!$lastDate || $date >= $lastDate) {
                 if ($date === $lastDate) {
                     $duplicate_dates++;
